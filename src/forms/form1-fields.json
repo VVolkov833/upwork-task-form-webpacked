@@ -1,0 +1,31 @@
+{
+    "user-name" : {
+        "type" : "input",
+        "title" : "User name",
+        "validate" : {
+            "notEmpty" : true,
+            "minLength" : 3
+        }
+    },
+    "country" : {
+        "type" : "input",
+        "title" : "Country",
+        "validate" : {
+            "notEmpty" : true,
+            "contained" : "countries"
+        },
+        "autoComplete" : "countries"
+    },
+    "tax-id" : {
+        "type" : "input",
+        "title" : "Tax identifier",
+        "validate" : {
+            "notEmpty" : true,
+            "regExp" : ["^[\\w\\d\\-]{3,}$", ""],
+            "regExpReplace" : ["country", "countries"]
+        }
+    },
+    "submit" : {
+        "type" : "submit"
+    }
+}
